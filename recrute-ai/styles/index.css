@@ -37,6 +37,11 @@ body {
     background-color: var(--color-white);
     overflow-x: hidden;
     /* Evita scroll horizontal */
+    user-select: none;
+}
+
+::-webkit-scrollbar{
+    display: none;
 }
 
 /* Classe de container reutilizável */
@@ -521,13 +526,16 @@ a.create-account i {
 /* ============================================= */
 /* Seção 3: Depoimentos
 /* ============================================= */
+
+/* Bloco Novo */
 .testimonials {
-    background: linear-gradient(90deg, var(--color-bg-purple-dark), var(--color-bg-purple-light));
+    /* *** CORRIGIDO: Gradiente de TRÊS CORES (Preto -> Roxo Escuro -> Roxo Claro) *** */
+    background: linear-gradient(to right, #000000, #5417b2, #be94ff); 
     color: var(--color-white);
-    height: 100vh;
+    height: 100vh; 
     display: flex;
-    align-items: center;
-    padding: 20px;
+    align-items: center; 
+    padding: 20px; 
 }
 
 .testimonial-content {
@@ -542,32 +550,28 @@ a.create-account i {
     flex-basis: 40%;
 }
 
-/* Bloco Novo */
 .testimonial-title h3 {
     font-family: var(--font-title);
-    font-weight: 700;
-    /* Alterado para Bold */
+    font-weight: 700; /* Bold */
     font-size: 3.8rem;
     line-height: 1.3;
 }
 
 .testimonial-quote-area {
-    flex-basis: 60%;
+    flex-basis: 50%;
     display: flex;
     align-items: center;
     gap: 25px;
     position: relative;
+    height: 380px; /* *** ADICIONADO AQUI: Altura fixa para alinhar com o design *** */
 }
 
-/* *** ALTERAÇÃO AQUI: Estilo para a IMAGEM das aspas *** */
+/* Estilo para a IMAGEM das aspas */
 .quote-mark-img {
     position: absolute;
-    top: -80px;
-    /* Ajuste conforme necessário */
-    left: -40px;
-    /* Ajuste conforme necessário */
-    width: 180px;
-    /* Ajuste conforme necessário */
+    top: -80px; 
+    left: -40px; 
+    width: 180px; 
     height: auto;
     opacity: 0.8;
     z-index: 1;
@@ -577,18 +581,21 @@ a.create-account i {
     border: 2px solid var(--color-white);
     border-radius: 20px;
     padding: 30px;
-    padding-top: 50px;
-    /* Mantém espaço para a imagem */
+    padding-top: 50px; 
     position: relative;
-    z-index: 2;
-    /* Texto acima da imagem */
+    z-index: 2; 
     flex-grow: 1;
+    display: flex; /* Para centralizar conteúdo verticalmente */
+    flex-direction: column; /* Para empilhar p e strong */
+    justify-content: center; /* Centraliza verticalmente */
+    height: 100%; /* Garante que a caixa ocupe toda a altura da .testimonial-quote-area */
 }
 
 .quote-box p {
     font-family: var(--font-subtitle);
     font-weight: 300;
-    font-size: 1.2rem;
+    /* *** ALTERADO AQUI: Tamanho da fonte do depoimento *** */
+    font-size: 1.5rem; /* Aumentado de 1.2rem para 1.5rem */
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -837,52 +844,50 @@ a.create-account i {
     /* ============================================= */
     /* Seção 3: Depoimentos (Mobile)
     /* ============================================= */
-    .testimonials {
+     .testimonials {
         height: auto;
         padding: 80px 20px;
     }
 
     .testimonial-content {
-        flex-direction: column;
+        flex-direction: column; 
         gap: 40px;
-        padding: 0;
+        padding: 0; 
     }
 
     .testimonial-title,
     .testimonial-quote-area {
         flex-basis: 100%;
+        height: auto; /* Removendo altura fixa para mobile */
     }
 
     .testimonial-title h3 {
-        font-size: 2.2rem;
-        text-align: center;
+        font-size: 2.2rem; 
+        text-align: center; 
     }
 
     .testimonial-quote-area {
-        flex-direction: column;
+        flex-direction: column; 
         gap: 30px;
     }
 
-    /* *** ALTERAÇÃO AQUI: Estilo mobile da IMAGEM das aspas *** */
     .quote-mark-img {
-        width: 100px;
-        /* Tamanho menor */
-        top: -30px;
-        /* Posição ajustada */
-        left: 0px;
-        /* Posição ajustada */
+        width: 100px; 
+        top: -30px;   
+        left: 0px;    
     }
 
     .quote-box {
         padding-top: 40px;
+        height: auto; /* Removendo altura fixa para mobile */
     }
 
     .quote-box p {
-        font-size: 1.1rem;
+        font-size: 1.1rem; /* *** ALTERADO AQUI: Tamanho da fonte do depoimento no mobile *** */
     }
 
     .arrow-next {
-        display: none;
+        display: none; 
     }
 
     /* ============================================= */
