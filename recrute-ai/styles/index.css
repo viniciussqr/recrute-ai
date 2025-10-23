@@ -682,233 +682,167 @@ a.create-account i {
     letter-spacing: 0.5px;
 }
 
-
 /* ============================================= */
-/* Media Queries for Responsividade (Celular)
+/* BREAKPOINTS RESPONSIVOS
 /* ============================================= */
 
+/* Tablet Grande / Laptop Pequeno (<= 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 900px; /* Container um pouco menor */
+    }
+
+    /* Ajustes Splash */
+    #subsection-1 { font-size: 60px; }
+    #img-logo { margin-left: 10px; }
+    #subsection-2 { font-size: 12px; margin-top: 0; }
+    #subsection-3 { font-size: 14px; }
+
+    /* Ajustes Login */
+    .login-container { max-width: 900px; gap: 40px;}
+    .login-features { height: auto; } /* Altura automática */
+    .feature-item h3 { font-size: 1.6rem; }
+    .feature-item p { font-size: 1rem; }
+
+    /* Ajustes Intro */
+    .intro h1 { font-size: 2.8rem; }
+    .intro p { font-size: 1.1rem; }
+
+    /* Ajustes Vagas */
+    .featured-jobs h2 { font-size: 3rem; }
+    .job-title { font-size: 1.1rem; }
+
+    /* Ajustes Depoimentos */
+    .testimonial-content { gap: 30px; }
+    .testimonial-title h3 { font-size: 3rem; }
+    .quote-mark-img { width: 120px; top: -40px; left: -20px; }
+    .quote-box p { font-size: 1.3rem; }
+
+    /* Ajustes Footer */
+    .contact-columns { gap: 30px; }
+    .contact-column h4 { font-size: 1.3rem; }
+    .contact-column p { font-size: 0.9rem; }
+}
+
+/* Tablet Retrato / Celular Grande (<= 768px) */
 @media (max-width: 768px) {
-
-    /* ============================================= */
-    /* Seção 0: Splash (Mobile)
-    /* ============================================= */
-    .container-index {
-        align-items: flex-start;
-        padding: 60px 20px;
+    .container {
+        max-width: 100%; /* Ocupa largura total */
     }
 
-    .container-header {
-        max-width: 100%;
+    /* Ajustes Gerais para Seções com 100vh -> Altura Automática */
+    .container-index, .intro, .featured-jobs, .testimonials, .contact {
+        min-height: auto; /* Remove altura mínima baseada em vh */
+        padding-top: 80px; /* Adiciona padding superior */
+        padding-bottom: 80px; /* Adiciona padding inferior */
+    }
+     .login-screen { /* Aplica também à página de login */
+        min-height: auto;
+        padding-top: 80px; 
+        padding-bottom: 80px; 
     }
 
-    #subsection-1 {
-        font-size: 36px;
-    }
+    /* Seção 0: Splash */
+    .container-index { padding: 60px 20px; align-items: flex-start; }
+    .container-header { max-width: 100%; }
+    #subsection-1 { font-size: 48px; }
+    #img-logo { height: 1.2em; margin-left: 10px; }
+    #subsection-2 { font-size: 12px; letter-spacing: 3px; margin-top: 0; }
+    #subsection-3 { font-size: 14px; margin-bottom: 30px; }
+    #subsection-4 { flex-direction: column; width: 100%; gap: 15px; }
+    #button-1, #button-2 { width: 100%; font-size: 14px; padding: 12px 20px; }
 
-    #img-logo {
-        height: 2em;
-        margin-left: -30px;
-    }
+    /* Seção 0: Login */
+    .login-container { flex-direction: column; gap: 50px; }
+    .login-form, .login-features { flex-basis: 100%; }
+    .login-logo img { height: 150px; margin-bottom: -40px; }
+    .input-group input { padding: 16px 20px 16px 50px; }
+    button.btn-login-main, a.btn-social { width: 100%; }
+    .login-features { padding: 30px; gap: 40px; }
+    .feature-item h3 { font-size: 1.5rem; }
+    .feature-item p { font-size: 1rem; }
+    .feature-icon { font-size: 2rem; width: 40px; }
 
-    #subsection-2 {
-        font-size: 12px;
-        letter-spacing: 3px;
-        margin-top: 0;
-    }
+    /* Seção 1: Intro */
+    .intro { padding: 80px 20px; }
+    .intro .logo { height: 180px; margin-bottom: -30px; }
+    .intro h1 { font-size: 2.2rem; }
+    .intro p { font-size: 1rem; }
 
-    #subsection-3 {
-        font-size: 14px;
-        margin-bottom: 30px;
-    }
+    /* Seção 2: Vagas */
+    .featured-jobs { padding: 80px 20px; justify-content: flex-start; }
+    .featured-jobs h2 { font-size: 2.2rem; margin-bottom: 30px; text-align: left;} /* Garante alinhamento esquerdo */
+    .job-item { flex-direction: column; align-items: flex-start; gap: 15px; padding: 15px;}
+    .job-icon { margin-right: 0; margin-bottom: 10px;}
+    .job-title { font-size: 1.1rem; margin-right: 0;}
+    .btn-details { align-self: flex-start; margin-top: 10px;}
 
-    #subsection-4 {
-        flex-direction: column;
-        width: 100%;
-        gap: 15px;
-        align-items: center;
-    }
+    /* Seção 3: Depoimentos */
+    .testimonials { padding: 80px 20px; }
+    .testimonial-content { flex-direction: column; gap: 40px; padding: 0; }
+    .testimonial-title, .testimonial-quote-area { flex-basis: 100%; min-height: auto;}
+    .testimonial-title h3 { font-size: 2.2rem; text-align: center; }
+    .testimonial-quote-area { flex-direction: column; gap: 30px; }
+    .quote-mark-img { width: 100px; top: -30px; left: 0px; }
+    .quote-box { padding: 30px; padding-top: 40px; }
+    .quote-box p { font-size: 1.1rem; }
+    .arrow-next { display: none; }
 
-    #button-1,
-    #button-2 {
-        width: 100%;
-        font-size: 14px;
-        padding: 12px 20px;
-    }
+    /* Seção 4: Footer */
+    .contact-banner { height: 40vh; flex-grow: 0; } 
+    .contact-info { padding: 50px 20px; }
+    .contact-columns { flex-direction: column; gap: 30px; }
+    .contact-column h4 { font-size: 1.3rem; }
+    .contact-column p { font-size: 0.9rem; }
+}
 
-    /* ============================================= */
-    /* Seção 0: Login (Mobile)
-    /* ============================================= */
-    .login-screen {
-        height: auto;
-        min-height: 100vh;
-        padding: 60px 20px;
-    }
+/* Celular Pequeno (<= 480px) */
+@media (max-width: 480px) {
+    /* Seção 0: Splash */
+    .container-index { padding: 40px 15px; }
+    #subsection-1 { font-size: 36px; }
+    #img-logo { height: 1.5em; margin-left: 5px;}
+    #subsection-2 { font-size: 10px; letter-spacing: 2px; }
+    #subsection-3 { font-size: 13px; }
+    #button-1, #button-2 { font-size: 13px; padding: 10px 15px; }
 
-    .login-container {
-        flex-direction: column;
-        gap: 50px;
-    }
+    /* Seção 0: Login */
+    .login-screen { padding: 40px 15px; }
+    .login-logo img { height: 120px; margin-bottom: -30px; }
+    .input-group input { padding: 14px 15px 14px 45px; font-size: 0.9rem;}
+    .input-group i { left: 15px; font-size: 1rem;}
+    button.btn-login-main, a.btn-social { font-size: 0.9rem; padding: 10px;}
+    .login-features { padding: 20px;}
+    .feature-item { gap: 15px;}
+    .feature-item h3 { font-size: 1.3rem; }
+    .feature-item p { font-size: 0.9rem; }
+    .feature-icon { font-size: 1.8rem; width: 35px; }
 
-    .login-form,
-    .login-features {
-        flex-basis: 100%;
-    }
+    /* Seção 1: Intro */
+    .intro { padding: 60px 15px; }
+    .intro .logo { height: 150px; margin-bottom: -20px; }
+    .intro h1 { font-size: 1.8rem; }
+    .intro p { font-size: 0.9rem; }
 
-    .login-logo img {
-        height: 150px;
-        margin-bottom: -40px;
-    }
+    /* Seção 2: Vagas */
+    .featured-jobs { padding: 60px 15px; }
+    .featured-jobs h2 { font-size: 1.8rem; }
+    .job-item { padding: 15px; }
+    .job-icon { width: 50px; height: 50px; font-size: 1.2rem;}
+    .job-title { font-size: 1rem; }
+    .btn-details { font-size: 0.9rem; padding: 10px 20px; }
 
-    .input-group input {
-        padding: 16px 20px 16px 50px;
-    }
+    /* Seção 3: Depoimentos */
+    .testimonials { padding: 60px 15px; }
+    .testimonial-title h3 { font-size: 1.8rem; }
+    .quote-mark-img { width: 80px; top: -20px; }
+    .quote-box { padding: 20px; padding-top: 30px; }
+    .quote-box p { font-size: 1rem; }
+    .quote-box strong { font-size: 1rem; }
 
-    button.btn-login-main,
-    a.btn-social {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    a.create-account {
-        margin-top: 20px;
-    }
-
-    .login-features {
-        height: auto;
-        padding: 30px;
-        gap: 40px;
-    }
-
-    .feature-item h3 {
-        font-size: 1.5rem;
-    }
-
-    .feature-item p {
-        font-size: 1rem;
-    }
-
-    .feature-icon {
-        font-size: 2rem;
-        width: 40px;
-    }
-
-    /* ============================================= */
-    /* Seção 1: Intro (Mobile)
-    /* ============================================= */
-    .intro {
-        height: auto;
-        padding: 80px 20px;
-    }
-
-    .intro .logo {
-        height: 180px;
-        margin-bottom: -30px;
-    }
-
-    .intro h1 {
-        font-size: 2.2rem;
-    }
-
-    .intro p {
-        font-size: 1rem;
-    }
-
-    /* ============================================= */
-    /* Seção 2: Vagas (Mobile)
-    /* ============================================= */
-    .featured-jobs {
-        height: auto;
-        padding: 80px 20px;
-        justify-content: flex-start;
-    }
-
-    .featured-jobs h2 {
-        font-size: 2.2rem;
-        margin-bottom: 30px;
-    }
-
-    .job-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .job-title {
-        font-size: 1.1rem;
-    }
-
-    .btn-details {
-        align-self: flex-start;
-    }
-
-    /* ============================================= */
-    /* Seção 3: Depoimentos (Mobile)
-    /* ============================================= */
-     .testimonials {
-        height: auto;
-        padding: 80px 20px;
-    }
-
-    .testimonial-content {
-        flex-direction: column; 
-        gap: 40px;
-        padding: 0; 
-    }
-
-    .testimonial-title,
-    .testimonial-quote-area {
-        flex-basis: 100%;
-        height: auto; /* Removendo altura fixa para mobile */
-    }
-
-    .testimonial-title h3 {
-        font-size: 2.2rem; 
-        text-align: center; 
-    }
-
-    .testimonial-quote-area {
-        flex-direction: column; 
-        gap: 30px;
-    }
-
-    .quote-mark-img {
-        width: 100px; 
-        top: -30px;   
-        left: 0px;    
-    }
-
-    .quote-box {
-        padding-top: 40px;
-        height: auto; /* Removendo altura fixa para mobile */
-    }
-
-    .quote-box p {
-        font-size: 1.1rem; /* *** ALTERADO AQUI: Tamanho da fonte do depoimento no mobile *** */
-    }
-
-    .arrow-next {
-        display: none; 
-    }
-
-    /* ============================================= */
-    /* Seção 4: Footer (Mobile)
-    /* ============================================= */
-    .contact {
-        height: auto;
-    }
-
-    .contact-banner {
-        height: 50vh;
-        flex-grow: 0;
-    }
-
-    .contact-info {
-        padding: 60px 20px;
-    }
-
-    .contact-columns {
-        flex-direction: column;
-        gap: 30px;
-    }
+    /* Seção 4: Footer */
+    .contact-banner { height: 30vh; }
+    .contact-info { padding: 40px 15px; }
+    .contact-column h4 { font-size: 1.2rem; }
+    .contact-column p { font-size: 0.85rem; }
 }
