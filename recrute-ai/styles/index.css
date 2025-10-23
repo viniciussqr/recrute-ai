@@ -1,0 +1,120 @@
+:root {
+    --color-white: #ffff;
+}
+
+body {
+    backface-visibility: hidden;
+    margin: 10px;
+    overflow: hidden;
+    user-select: none;
+}
+
+.container-index {
+
+    width: auto;
+    height: auto;
+    display: flex;
+    padding: 20px;
+    margin: 50px 20px;
+
+    & #background-header {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: 1;
+        object-fit: cover;
+
+    }
+
+    & #overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    & .container-header {
+
+        z-index: 2;
+
+        & #subsection {
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            & #subsection-1 h1 {
+                display: flex;
+                align-items: center;
+                margin: 0;
+            }
+
+            & #subsection-1 {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                font-size: 48px;
+                color: var(--color-white);
+                font-family: montserrat-bold;
+
+                & #img-logo {
+                    height: 2em;
+                    width: auto;
+                    margin-left: -50px;
+                }
+            }
+
+            & #subsection-2 {
+                margin-top: -80px;
+                letter-spacing: 7px;
+                opacity: 0.6;
+                padding: 10px;
+                margin-bottom: 10px;
+                color: var(--color-white);
+                font-family: gotham-extra-light;
+                font-size: 16px;
+            }
+        }
+
+        & #subsection-3 {
+            padding: 10px;
+            letter-spacing: 2px;
+            font-size: 14px;
+            color: var(--color-white);
+            font-family: montserrat-extra-light;
+            margin-bottom: 50px;
+
+        }
+
+        & #subsection-4 {
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            width: 500px;
+            gap: 100px;
+
+            & #button-1,
+            #button-2 {
+                font-family: montserrat-regular;
+                background-color: transparent;
+                border: solid var(--color-white) 3px;
+                border-radius: 10px;
+                width: auto;
+                height: 100%;
+                padding: 15px 20px;
+                cursor: pointer;
+                color: var(--color-white);
+                font-size: 16px;
+                
+            }
+
+        }
+
+    }
+
+}
