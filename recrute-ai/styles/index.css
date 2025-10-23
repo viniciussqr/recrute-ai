@@ -681,127 +681,320 @@ a.create-account i {
     color: #e0e0e0;
     letter-spacing: 0.5px;
 }
-
 /* ============================================= */
 /* BREAKPOINTS RESPONSIVOS
 /* ============================================= */
 
-/* Tablet Grande / Laptop Pequeno (<= 1024px) */
+/* Tablet Grande / Laptop Pequeno (<= 1024px) - Ajustes sutis */
 @media (max-width: 1024px) {
     .container {
-        max-width: 900px; /* Container um pouco menor */
+        max-width: 90%; /* Container um pouco mais flexível */
     }
 
     /* Ajustes Splash */
-    #subsection-1 { font-size: 60px; }
-    #img-logo { margin-left: 10px; }
-    #subsection-2 { font-size: 12px; margin-top: 0; }
-    #subsection-3 { font-size: 14px; }
+    #subsection-1 { font-size: 60px; } /* Fonte ligeiramente menor */
+    #img-logo { margin-left: -50px; } /* Mantém seu ajuste */
+    #subsection-2 { font-size: 13px; margin-top: -60px;} /* Ajusta posição */
+    #subsection-3 { font-size: 15px; }
 
     /* Ajustes Login */
-    .login-container { max-width: 900px; gap: 40px;}
-    .login-features { height: auto; } /* Altura automática */
-    .feature-item h3 { font-size: 1.6rem; }
+    .login-container { max-width: 90%; gap: 40px;}
+    .login-features { height: auto; padding: 30px;} /* Altura automática, menos padding */
+    .feature-item h3 { font-size: 1.7rem; }
     .feature-item p { font-size: 1rem; }
 
     /* Ajustes Intro */
     .intro h1 { font-size: 2.8rem; }
-    .intro p { font-size: 1.1rem; }
+    .intro p { font-size: 1.15rem; }
 
     /* Ajustes Vagas */
     .featured-jobs h2 { font-size: 3rem; }
-    .job-title { font-size: 1.1rem; }
+    .job-title { font-size: 1.15rem; }
 
     /* Ajustes Depoimentos */
-    .testimonial-content { gap: 30px; }
-    .testimonial-title h3 { font-size: 3rem; }
-    .quote-mark-img { width: 120px; top: -40px; left: -20px; }
+    .testimonial-content { gap: 30px; align-items: stretch;} /* Alinha itens para esticar se necessário */
+    .testimonial-title h3 { font-size: 3.2rem; }
+    .testimonial-quote-area { flex-basis: 55%; min-height: 340px; } /* Ajusta proporção e altura */
+    .quote-mark-img { width: 140px; top: -50px; left: -25px; }
+    .quote-box { padding: 25px; padding-top: 40px;}
     .quote-box p { font-size: 1.3rem; }
 
     /* Ajustes Footer */
     .contact-columns { gap: 30px; }
-    .contact-column h4 { font-size: 1.3rem; }
-    .contact-column p { font-size: 0.9rem; }
+    .contact-column h4 { font-size: 1.4rem; }
+    .contact-column p { font-size: 0.95rem; }
 }
 
-/* Tablet Retrato / Celular Grande (<= 768px) */
+
+/* Tablet Retrato / Celular Grande (<= 768px) - SEU BLOCO COM CORREÇÕES ESSENCIAIS */
 @media (max-width: 768px) {
-    .container {
-        max-width: 100%; /* Ocupa largura total */
-    }
 
-    /* Ajustes Gerais para Seções com 100vh -> Altura Automática */
-    .container-index, .intro, .featured-jobs, .testimonials, .contact {
-        min-height: auto; /* Remove altura mínima baseada em vh */
-        padding-top: 80px; /* Adiciona padding superior */
-        padding-bottom: 80px; /* Adiciona padding inferior */
-    }
-     .login-screen { /* Aplica também à página de login */
+    /* CORREÇÃO ESSENCIAL: Altura Automática para Seções */
+    .container-index, .login-screen, .intro, .featured-jobs, .testimonials, .contact {
         min-height: auto;
-        padding-top: 80px; 
-        padding-bottom: 80px; 
+        height: auto;
+        padding-top: 80px; /* Adiciona espaçamento superior consistente */
+        padding-bottom: 80px; /* Adiciona espaçamento inferior consistente */
+    }
+    /* Garante que o container interno não exceda 100% */
+     .container {
+        max-width: 100%;
+        width: 90%; /* Mantém a margem lateral */
     }
 
-    /* Seção 0: Splash */
-    .container-index { padding: 60px 20px; align-items: flex-start; }
-    .container-header { max-width: 100%; }
-    #subsection-1 { font-size: 48px; }
-    #img-logo { height: 1.2em; margin-left: 10px; }
-    #subsection-2 { font-size: 12px; letter-spacing: 3px; margin-top: 0; }
-    #subsection-3 { font-size: 14px; margin-bottom: 30px; }
-    #subsection-4 { flex-direction: column; width: 100%; gap: 15px; }
-    #button-1, #button-2 { width: 100%; font-size: 14px; padding: 12px 20px; }
 
-    /* Seção 0: Login */
-    .login-container { flex-direction: column; gap: 50px; }
-    .login-form, .login-features { flex-basis: 100%; }
-    .login-logo img { height: 150px; margin-bottom: -40px; }
-    .input-group input { padding: 16px 20px 16px 50px; }
-    button.btn-login-main, a.btn-social { width: 100%; }
-    .login-features { padding: 30px; gap: 40px; }
-    .feature-item h3 { font-size: 1.5rem; }
-    .feature-item p { font-size: 1rem; }
-    .feature-icon { font-size: 2rem; width: 40px; }
+    /* ============================================= */
+    /* Seção 0: Splash (Mobile) - SEU CÓDIGO         */
+    /* ============================================= */
+    .container-index {
+        align-items: flex-start;
+        padding: 60px 20px; /* Seu padding */
+    }
 
-    /* Seção 1: Intro */
-    .intro { padding: 80px 20px; }
-    .intro .logo { height: 180px; margin-bottom: -30px; }
-    .intro h1 { font-size: 2.2rem; }
-    .intro p { font-size: 1rem; }
+    .container-header {
+        max-width: 100%; /* Sua largura */
+    }
 
-    /* Seção 2: Vagas */
-    .featured-jobs { padding: 80px 20px; justify-content: flex-start; }
-    .featured-jobs h2 { font-size: 2.2rem; margin-bottom: 30px; text-align: left;} /* Garante alinhamento esquerdo */
-    .job-item { flex-direction: column; align-items: flex-start; gap: 15px; padding: 15px;}
-    .job-icon { margin-right: 0; margin-bottom: 10px;}
-    .job-title { font-size: 1.1rem; margin-right: 0;}
-    .btn-details { align-self: flex-start; margin-top: 10px;}
+    #subsection-1 {
+        font-size: 36px; /* Sua fonte */
+    }
 
-    /* Seção 3: Depoimentos */
-    .testimonials { padding: 80px 20px; }
-    .testimonial-content { flex-direction: column; gap: 40px; padding: 0; }
-    .testimonial-title, .testimonial-quote-area { flex-basis: 100%; min-height: auto;}
-    .testimonial-title h3 { font-size: 2.2rem; text-align: center; }
-    .testimonial-quote-area { flex-direction: column; gap: 30px; }
-    .quote-mark-img { width: 100px; top: -30px; left: 0px; }
-    .quote-box { padding: 30px; padding-top: 40px; }
-    .quote-box p { font-size: 1.1rem; }
-    .arrow-next { display: none; }
+    #img-logo {
+        height: 2em; /* Sua altura */
+        margin-left: -30px; /* Sua margem */
+    }
 
-    /* Seção 4: Footer */
-    .contact-banner { height: 40vh; flex-grow: 0; } 
-    .contact-info { padding: 50px 20px; }
-    .contact-columns { flex-direction: column; gap: 30px; }
-    .contact-column h4 { font-size: 1.3rem; }
-    .contact-column p { font-size: 0.9rem; }
-}
+    #subsection-2 {
+        font-size: 12px; /* Sua fonte */
+        letter-spacing: 3px; /* Seu espaçamento */
+        margin-top: 0; /* Seu margin-top */
+    }
 
-/* Celular Pequeno (<= 480px) */
+    #subsection-3 {
+        font-size: 14px; /* Sua fonte */
+        margin-bottom: 30px; /* Sua margem */
+    }
+
+    #subsection-4 {
+        flex-direction: column; /* Sua direção */
+        width: 100%; /* Sua largura */
+        gap: 15px; /* Seu gap */
+    }
+
+    #button-1,
+    #button-2 {
+        width: 100%; /* Sua largura */
+        font-size: 14px; /* Sua fonte */
+        padding: 12px 20px; /* Seu padding */
+    }
+
+    /* ============================================= */
+    /* Seção 0: Login (Mobile) - SEU CÓDIGO          */
+    /* ============================================= */
+    .login-screen {
+        padding: 60px 20px; /* Seu padding */
+    }
+
+    .login-container {
+        flex-direction: column; /* Sua direção */
+        gap: 50px; /* Seu gap */
+    }
+
+    .login-form,
+    .login-features {
+        flex-basis: 100%; /* Sua base */
+    }
+
+    .login-logo img {
+        height: 150px; /* Sua altura */
+        margin-bottom: -40px; /* Sua margem */
+    }
+
+    .input-group input {
+        padding: 16px 20px 16px 50px; /* Seu padding */
+    }
+
+    button.btn-login-main,
+    a.btn-social {
+        width: 100%; /* Sua largura */
+        margin-left: auto; /* Sua margem */
+        margin-right: auto; /* Sua margem */
+    }
+     /* CORREÇÃO ESSENCIAL: Centraliza botão ENTRAR */
+    button.btn-login-main {
+         margin: 0 auto 20px auto;
+    }
+
+
+    a.create-account {
+        margin-top: 20px; /* Sua margem */
+    }
+
+    .login-features {
+        height: auto; /* Sua altura */
+        padding: 30px; /* Seu padding */
+        gap: 40px; /* Seu gap */
+        border: none; /* Remove borda no mobile, opcional */
+    }
+
+    .feature-item h3 {
+        font-size: 1.5rem; /* Sua fonte */
+    }
+
+    .feature-item p {
+        font-size: 1rem; /* Sua fonte */
+    }
+
+    .feature-icon {
+        font-size: 2rem; /* Sua fonte */
+        width: 40px; /* Sua largura */
+    }
+
+    /* ============================================= */
+    /* Seção 1: Intro (Mobile) - SEU CÓDIGO          */
+    /* ============================================= */
+    .intro {
+        padding: 80px 20px; /* Seu padding */
+    }
+
+    .intro .logo {
+        height: 180px; /* Sua altura */
+        margin-bottom: -30px; /* Sua margem */
+    }
+
+    .intro h1 {
+        font-size: 2.2rem; /* Sua fonte */
+    }
+
+    .intro p {
+        font-size: 1rem; /* Sua fonte */
+    }
+
+    /* ============================================= */
+    /* Seção 2: Vagas (Mobile) - SEU CÓDIGO          */
+    /* ============================================= */
+    .featured-jobs {
+        padding: 80px 20px; /* Seu padding */
+        justify-content: flex-start; /* Seu alinhamento */
+    }
+
+    .featured-jobs h2 {
+        font-size: 2.2rem; /* Sua fonte */
+        margin-bottom: 30px; /* Sua margem */
+        text-align: left; /* Garante alinhamento esquerdo */
+    }
+
+    .job-item {
+        flex-direction: column; /* Sua direção */
+        align-items: flex-start; /* Seu alinhamento */
+        gap: 15px; /* Seu gap */
+        padding: 15px; /* Padding menor */
+    }
+     .job-icon {
+        margin-right: 0;
+        margin-bottom: 10px; /* Adiciona espaço abaixo do ícone */
+    }
+
+    .job-title {
+        font-size: 1.1rem; /* Sua fonte */
+        margin-right: 0; /* Remove margem extra */
+    }
+
+    .btn-details {
+        align-self: flex-start; /* Seu alinhamento */
+        margin-top: 10px; /* Adiciona espaço */
+    }
+
+    /* ============================================= */
+    /* Seção 3: Depoimentos (Mobile) - SEU CÓDIGO    */
+    /* ============================================= */
+     .testimonials {
+        padding: 80px 20px; /* Seu padding */
+    }
+
+    .testimonial-content {
+        flex-direction: column; /* Sua direção */
+        gap: 40px; /* Seu gap */
+        padding: 0; /* Seu padding */
+    }
+
+    .testimonial-title,
+    .testimonial-quote-area {
+        flex-basis: 100%; /* Sua base */
+        height: auto; /* Sua altura */
+        min-height: auto; /* Garante que não tenha altura mínima */
+        width: 100%; /* Garante largura total */
+    }
+
+    .testimonial-title h3 {
+        font-size: 2.2rem; /* Sua fonte */
+        text-align: center; /* Seu alinhamento */
+    }
+
+    .testimonial-quote-area {
+        flex-direction: column; /* Sua direção */
+        gap: 30px; /* Seu gap */
+    }
+
+    .quote-mark-img {
+        width: 100px; /* Sua largura */
+        top: -30px;   /* Sua posição */
+        left: 0px;    /* Sua posição */
+        position: relative; /* Teste para garantir visibilidade */
+        margin-bottom: -50px; /* Compensa a altura se relative funcionar */
+        align-self: flex-start;
+    }
+
+    .quote-box {
+        padding-top: 40px; /* Seu padding */
+        height: auto; /* Sua altura */
+        width: 100%; /* Garante largura */
+    }
+
+    .quote-box p {
+        font-size: 1.1rem; /* Sua fonte */
+    }
+
+    .arrow-next {
+        display: none; /* Seu display */
+    }
+
+    /* ============================================= */
+    /* Seção 4: Footer (Mobile) - SEU CÓDIGO         */
+    /* ============================================= */
+    .contact {
+        height: auto; /* Sua altura */
+    }
+
+    .contact-banner {
+        height: 50vh; /* Sua altura */
+        flex-grow: 0; /* Seu grow */
+    }
+
+    .contact-info {
+        padding: 60px 20px; /* Seu padding */
+    }
+
+    .contact-columns {
+        flex-direction: column; /* Sua direção */
+        gap: 30px; /* Seu gap */
+    }
+     .contact-column h4 { font-size: 1.3rem; } /* Regras adicionadas para consistência */
+     .contact-column p { font-size: 0.9rem; } /* Regras adicionadas para consistência */
+
+} /* Fim do @media (max-width: 768px) */
+
+
+/* Celular Pequeno (<= 480px) - Ajustes finos adicionais */
 @media (max-width: 480px) {
+    /* Ajustes Gerais */
+    body { font-size: 14px; } /* Reduz tamanho base da fonte */
+    h1, h2, h3, h4 { line-height: 1.3; } /* Melhora legibilidade títulos */
+
     /* Seção 0: Splash */
     .container-index { padding: 40px 15px; }
-    #subsection-1 { font-size: 36px; }
-    #img-logo { height: 1.5em; margin-left: 5px;}
+    #subsection-1 { font-size: 32px; } /* Reduz mais */
+    #img-logo { height: 1.5em; margin-left: -20px;}
     #subsection-2 { font-size: 10px; letter-spacing: 2px; }
     #subsection-3 { font-size: 13px; }
     #button-1, #button-2 { font-size: 13px; padding: 10px 15px; }
@@ -835,7 +1028,7 @@ a.create-account i {
     /* Seção 3: Depoimentos */
     .testimonials { padding: 60px 15px; }
     .testimonial-title h3 { font-size: 1.8rem; }
-    .quote-mark-img { width: 80px; top: -20px; }
+    .quote-mark-img { width: 80px; top: -20px; left: 5px;}
     .quote-box { padding: 20px; padding-top: 30px; }
     .quote-box p { font-size: 1rem; }
     .quote-box strong { font-size: 1rem; }
