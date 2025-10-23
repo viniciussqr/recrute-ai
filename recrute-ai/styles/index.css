@@ -725,6 +725,7 @@ a.create-account i {
         flex-direction: column;
         width: 100%;
         gap: 15px;
+        align-items: center;
     }
 
     #button-1,
@@ -732,6 +733,7 @@ a.create-account i {
         width: 60%;
         font-size: 14px;
         padding: 12px 20px;
+        align-items: center;
     }
 
     /* ============================================= */
