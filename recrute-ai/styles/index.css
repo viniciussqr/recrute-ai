@@ -103,7 +103,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 0px;
-    font-size: 72px;
+    font-size: 48px;
     color: var(--color-white);
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -695,12 +695,12 @@ a.create-account i {
     }
 
     #subsection-1 {
-        font-size: 48px;
+        font-size: 36px;
     }
 
     #img-logo {
         height: 1.2em;
-        margin-left: 10px;
+        margin-left: -10px;
     }
 
     #subsection-2 {
