@@ -684,6 +684,9 @@ a.create-account i {
 /* ============================================= */
 /* BREAKPOINTS RESPONSIVOS
 /* ============================================= */
+/* ============================================= */
+/* BREAKPOINTS RESPONSIVOS
+/* ============================================= */
 
 /* Tablet Grande / Laptop Pequeno (<= 1024px) - Ajustes sutis */
 @media (max-width: 1024px) {
@@ -726,17 +729,21 @@ a.create-account i {
 }
 
 
-/* Tablet Retrato / Celular Grande (<= 768px) - SEU BLOCO COM CORREÇÕES ESSENCIAIS */
+/* Tablet Retrato / Celular Grande (<= 768px) - *** ALTURA RESTAURADA *** */
 @media (max-width: 768px) {
 
-    /* CORREÇÃO ESSENCIAL: Altura Automática para Seções */
+    /* *** ALTERAÇÃO PRINCIPAL AQUI: Restaurando min-height: 100vh *** */
     .container-index, .login-screen, .intro, .featured-jobs, .testimonials, .contact {
-        min-height: auto;
-        height: auto;
-        padding-top: 80px; /* Adiciona espaçamento superior consistente */
-        padding-bottom: 80px; /* Adiciona espaçamento inferior consistente */
+        min-height: 100vh; /* Tenta ocupar a altura da tela */
+        height: auto; /* Permite crescer se necessário (mas pode não ser ideal) */
+        /* Removemos padding geral para deixar o alinhamento interno cuidar */
+        padding-top: 40px; /* Reduz padding se necessário */
+        padding-bottom: 40px;
+        display: flex; /* Garante flexbox para alinhamento interno */
+        flex-direction: column; /* Necessário para centralizar verticalmente */
+        justify-content: center; /* Tenta centralizar o conteúdo verticalmente */
+        align-items: center; /* Centraliza container */
     }
-    /* Garante que o container interno não exceda 100% */
      .container {
         max-width: 100%;
         width: 90%; /* Mantém a margem lateral */
@@ -744,243 +751,256 @@ a.create-account i {
 
 
     /* ============================================= */
-    /* Seção 0: Splash (Mobile) - SEU CÓDIGO         */
+    /* Seção 0: Splash (Mobile)                     */
     /* ============================================= */
     .container-index {
-        align-items: flex-start;
-        padding: 60px 20px; /* Seu padding */
+        align-items: flex-start; /* Sobrescreve align-items: center */
+        padding: 60px 20px; /* Seu padding específico */
+        justify-content: center; /* Mantém centralizado verticalmente */
     }
 
     .container-header {
-        max-width: 100%; /* Sua largura */
+        max-width: 100%;
     }
 
     #subsection-1 {
-        font-size: 36px; /* Sua fonte */
+        font-size: 36px;
     }
 
     #img-logo {
-        height: 2em; /* Sua altura */
-        margin-left: -30px; /* Sua margem */
+        height: 2em;
+        margin-left: -30px;
     }
 
     #subsection-2 {
-        font-size: 12px; /* Sua fonte */
-        letter-spacing: 3px; /* Seu espaçamento */
-        margin-top: 0; /* Seu margin-top */
+        font-size: 12px;
+        letter-spacing: 3px;
+        margin-top: 0;
     }
 
     #subsection-3 {
-        font-size: 14px; /* Sua fonte */
-        margin-bottom: 30px; /* Sua margem */
+        font-size: 14px;
+        margin-bottom: 30px;
     }
 
     #subsection-4 {
-        flex-direction: column; /* Sua direção */
-        width: 100%; /* Sua largura */
-        gap: 15px; /* Seu gap */
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
     }
 
     #button-1,
     #button-2 {
-        width: 100%; /* Sua largura */
-        font-size: 14px; /* Sua fonte */
-        padding: 12px 20px; /* Seu padding */
+        width: 100%;
+        font-size: 14px;
+        padding: 12px 20px;
     }
 
     /* ============================================= */
-    /* Seção 0: Login (Mobile) - SEU CÓDIGO          */
+    /* Seção 0: Login (Mobile)                      */
     /* ============================================= */
     .login-screen {
-        padding: 60px 20px; /* Seu padding */
+        padding: 60px 20px;
     }
 
     .login-container {
-        flex-direction: column; /* Sua direção */
-        gap: 50px; /* Seu gap */
+        flex-direction: column;
+        gap: 50px;
+        width: 100%; /* Garante largura total */
     }
 
     .login-form,
     .login-features {
-        flex-basis: 100%; /* Sua base */
+        flex-basis: auto; /* Base automática */
+        width: 100%; /* Ocupa largura total */
     }
 
     .login-logo img {
-        height: 150px; /* Sua altura */
-        margin-bottom: -40px; /* Sua margem */
+        height: 150px;
+        margin-bottom: -40px;
     }
 
     .input-group input {
-        padding: 16px 20px 16px 50px; /* Seu padding */
+        padding: 16px 20px 16px 50px;
     }
 
     button.btn-login-main,
     a.btn-social {
-        width: 100%; /* Sua largura */
-        margin-left: auto; /* Sua margem */
-        margin-right: auto; /* Sua margem */
+        width: 100%;
     }
-     /* CORREÇÃO ESSENCIAL: Centraliza botão ENTRAR */
     button.btn-login-main {
-         margin: 0 auto 20px auto;
+         margin: 0 auto 20px auto; /* Centraliza */
     }
 
 
     a.create-account {
-        margin-top: 20px; /* Sua margem */
+        margin-top: 20px;
     }
 
     .login-features {
-        height: auto; /* Sua altura */
-        padding: 30px; /* Seu padding */
-        gap: 40px; /* Seu gap */
-        border: none; /* Remove borda no mobile, opcional */
+        height: auto;
+        padding: 30px;
+        gap: 40px;
+        border: none;
     }
 
     .feature-item h3 {
-        font-size: 1.5rem; /* Sua fonte */
+        font-size: 1.5rem;
     }
 
     .feature-item p {
-        font-size: 1rem; /* Sua fonte */
+        font-size: 1rem;
     }
 
     .feature-icon {
-        font-size: 2rem; /* Sua fonte */
-        width: 40px; /* Sua largura */
+        font-size: 2rem;
+        width: 40px;
     }
 
     /* ============================================= */
-    /* Seção 1: Intro (Mobile) - SEU CÓDIGO          */
+    /* Seção 1: Intro (Mobile)                      */
     /* ============================================= */
     .intro {
-        padding: 80px 20px; /* Seu padding */
+        padding: 80px 20px;
     }
 
     .intro .logo {
-        height: 180px; /* Sua altura */
-        margin-bottom: -30px; /* Sua margem */
+        height: 180px;
+        margin-bottom: -30px;
     }
 
     .intro h1 {
-        font-size: 2.2rem; /* Sua fonte */
+        font-size: 2.2rem;
     }
 
     .intro p {
-        font-size: 1rem; /* Sua fonte */
+        font-size: 1rem;
     }
 
     /* ============================================= */
-    /* Seção 2: Vagas (Mobile) - SEU CÓDIGO          */
+    /* Seção 2: Vagas (Mobile)                      */
     /* ============================================= */
     .featured-jobs {
-        padding: 80px 20px; /* Seu padding */
-        justify-content: flex-start; /* Seu alinhamento */
+        padding: 80px 20px;
+        justify-content: center; /* Centraliza verticalmente o bloco */
     }
+     .featured-jobs .container {
+         display: flex;
+         flex-direction: column;
+         align-items: stretch; /* Faz h2 e job-list ocuparem largura */
+     }
+
 
     .featured-jobs h2 {
-        font-size: 2.2rem; /* Sua fonte */
-        margin-bottom: 30px; /* Sua margem */
-        text-align: left; /* Garante alinhamento esquerdo */
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        text-align: left;
     }
 
     .job-item {
-        flex-direction: column; /* Sua direção */
-        align-items: flex-start; /* Seu alinhamento */
-        gap: 15px; /* Seu gap */
-        padding: 15px; /* Padding menor */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px;
     }
      .job-icon {
         margin-right: 0;
-        margin-bottom: 10px; /* Adiciona espaço abaixo do ícone */
+        margin-bottom: 10px;
     }
 
     .job-title {
-        font-size: 1.1rem; /* Sua fonte */
-        margin-right: 0; /* Remove margem extra */
+        font-size: 1.1rem;
+        margin-right: 0;
     }
 
     .btn-details {
-        align-self: flex-start; /* Seu alinhamento */
-        margin-top: 10px; /* Adiciona espaço */
+        align-self: flex-start;
+        margin-top: 10px;
     }
 
     /* ============================================= */
-    /* Seção 3: Depoimentos (Mobile) - SEU CÓDIGO    */
+    /* Seção 3: Depoimentos (Mobile)                */
     /* ============================================= */
      .testimonials {
-        padding: 80px 20px; /* Seu padding */
+        padding: 80px 20px;
     }
+     .testimonials .container { /* Garante que o container ocupe a largura */
+         width: 100%;
+     }
 
     .testimonial-content {
-        flex-direction: column; /* Sua direção */
-        gap: 40px; /* Seu gap */
-        padding: 0; /* Seu padding */
+        flex-direction: column;
+        gap: 40px;
+        padding: 0;
+        width: 100%; /* Ocupa largura */
     }
 
     .testimonial-title,
     .testimonial-quote-area {
-        flex-basis: 100%; /* Sua base */
-        height: auto; /* Sua altura */
-        min-height: auto; /* Garante que não tenha altura mínima */
-        width: 100%; /* Garante largura total */
+        flex-basis: auto; /* Base automática */
+        height: auto;
+        min-height: auto;
+        width: 100%;
     }
 
     .testimonial-title h3 {
-        font-size: 2.2rem; /* Sua fonte */
-        text-align: center; /* Seu alinhamento */
+        font-size: 2.2rem;
+        text-align: center;
     }
 
     .testimonial-quote-area {
-        flex-direction: column; /* Sua direção */
-        gap: 30px; /* Seu gap */
+        flex-direction: column;
+        gap: 30px;
     }
 
     .quote-mark-img {
-        width: 100px; /* Sua largura */
-        top: -30px;   /* Sua posição */
-        left: 0px;    /* Sua posição */
-        position: relative; /* Teste para garantir visibilidade */
-        margin-bottom: -50px; /* Compensa a altura se relative funcionar */
+        width: 100px;
+        top: -30px;
+        left: 0px;
+        position: relative;
+        margin-bottom: -50px;
         align-self: flex-start;
     }
 
     .quote-box {
-        padding-top: 40px; /* Seu padding */
-        height: auto; /* Sua altura */
-        width: 100%; /* Garante largura */
+        padding-top: 40px;
+        height: auto;
+        width: 100%;
     }
 
     .quote-box p {
-        font-size: 1.1rem; /* Sua fonte */
+        font-size: 1.1rem;
     }
 
     .arrow-next {
-        display: none; /* Seu display */
+        display: none;
     }
 
     /* ============================================= */
-    /* Seção 4: Footer (Mobile) - SEU CÓDIGO         */
+    /* Seção 4: Footer (Mobile)                     */
     /* ============================================= */
     .contact {
-        height: auto; /* Sua altura */
+       justify-content: flex-start; /* Alinha conteúdo ao topo */
     }
 
     .contact-banner {
-        height: 50vh; /* Sua altura */
-        flex-grow: 0; /* Seu grow */
+        /* *** ALTERAÇÃO AQUI: Deixa o banner crescer *** */
+        height: auto; /* Remove altura fixa */
+        min-height: 50vh; /* Altura mínima para o vídeo */
+        flex-grow: 1; /* Permite crescer */
     }
 
     .contact-info {
-        padding: 60px 20px; /* Seu padding */
+        padding: 50px 20px;
+        flex-shrink: 0; /* Impede que encolha */
     }
 
     .contact-columns {
-        flex-direction: column; /* Sua direção */
-        gap: 30px; /* Seu gap */
+        flex-direction: column;
+        gap: 30px;
     }
-     .contact-column h4 { font-size: 1.3rem; } /* Regras adicionadas para consistência */
-     .contact-column p { font-size: 0.9rem; } /* Regras adicionadas para consistência */
+     .contact-column h4 { font-size: 1.3rem; }
+     .contact-column p { font-size: 0.9rem; }
 
 } /* Fim do @media (max-width: 768px) */
 
@@ -988,12 +1008,18 @@ a.create-account i {
 /* Celular Pequeno (<= 480px) - Ajustes finos adicionais */
 @media (max-width: 480px) {
     /* Ajustes Gerais */
-    body { font-size: 14px; } /* Reduz tamanho base da fonte */
-    h1, h2, h3, h4 { line-height: 1.3; } /* Melhora legibilidade títulos */
+    body { font-size: 14px; }
+    h1, h2, h3, h4 { line-height: 1.3; }
+
+     /* Ajustes Gerais Altura */
+    .container-index, .login-screen, .intro, .featured-jobs, .testimonials, .contact {
+        padding-top: 60px; /* Menos padding */
+        padding-bottom: 60px;
+    }
 
     /* Seção 0: Splash */
     .container-index { padding: 40px 15px; }
-    #subsection-1 { font-size: 32px; } /* Reduz mais */
+    #subsection-1 { font-size: 32px; }
     #img-logo { height: 1.5em; margin-left: -20px;}
     #subsection-2 { font-size: 10px; letter-spacing: 2px; }
     #subsection-3 { font-size: 13px; }
@@ -1034,7 +1060,7 @@ a.create-account i {
     .quote-box strong { font-size: 1rem; }
 
     /* Seção 4: Footer */
-    .contact-banner { height: 30vh; }
+    .contact-banner { min-height: 40vh; } /* Reduz altura mínima banner */
     .contact-info { padding: 40px 15px; }
     .contact-column h4 { font-size: 1.2rem; }
     .contact-column p { font-size: 0.85rem; }
